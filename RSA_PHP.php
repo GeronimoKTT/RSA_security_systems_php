@@ -144,13 +144,21 @@ body {
 	$U = RSA_U($C, $M);
 	//----------------PRIVATE KEY
 	$privateKey = array($U, $N);
-	//---------------------------
+	//--------------------------- End of the preprocessing part
 
-	$text = "TRUE";
+
+//Testing part
+	$text = "text to encrypt";
 	$code = Encrypt_Decrypt($text, $C, $N, $U, 'encrypt')[0];
 
 
-	echo '<br /><br /><br />Encrypted to :<br /><span style="color:red;">'. Encrypt_Decrypt($text, $C, $N, $U, 'encrypt')[0] .'</span>
+	echo 'P : <span style="color:#007fff;">'. $P .'</span><br /><br /><br />
+		  Q : <span style="color:green;">'. $Q .'</span>
+		  <br /><br /><br />M : '. $M .'
+		  <br /><br /><br />N : '. $N .'
+		  <br /><br /><br />C : '. $C .'
+		  <br /><br /><br />U : '. $U .'
+		  <br /><br /><br />Encrypted to :<br /><span style="color:red;">'. $code .'</span>
 		  <br /><br /><br />Decrypted to : <br />'. Encrypt_Decrypt($code, $C, $N, $U, 'decrypt')[0] .'<br /><br /><br /><br />';
 	
 
